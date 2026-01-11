@@ -1,4 +1,4 @@
-FROM golang as build-env
+FROM golang AS build-env
 WORKDIR /go/src/sshesame
 ADD . /go/src/sshesame
 RUN go build -o /go/bin/sshesame
