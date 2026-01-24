@@ -34,6 +34,15 @@ func (e *Environment) get(key string) string {
 	return ""
 }
 
+func (e *Environment) get_raw(key string) (string, bool) {
+	val, ok := e.env[key]
+	return val, ok
+}
+
+func (e *Environment) set(key string, value string) {
+	e.env[key] = value
+}
+
 func stringify_stmt(stmt *syntax.Stmt) string {
 	var sb strings.Builder
 	if stmt.Negated {
